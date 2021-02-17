@@ -6,7 +6,7 @@ import formatCurrency from "../util";
 
 
 export default class Products extends Component {
-    render(props) {
+    render() {
         return (
             <div>
                 <ul className="products">
