@@ -19,6 +19,13 @@ class App extends React.Component{
     }
   } 
 
+  removeFromCart=product=>{
+    const cartItems=this.state.cartItems.slice();
+    this.setState({
+      cartItems:cartItems.filter(x=>x._id!==product._id)
+    })
+  }
+
 
   addToCart=product=>{
     const cartItems=this.state.cartItems.slice();
@@ -88,7 +95,7 @@ class App extends React.Component{
             </div>
 
             <div className="sidebar">
-              <Cart cartItems={this.state.cartItems}/>
+              <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart}/>
             </div>
             
           </div>
