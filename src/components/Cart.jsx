@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import formatCurrency from '../util';
 
 export default class Cart extends Component {
     render() {
@@ -21,7 +22,11 @@ export default class Cart extends Component {
 
                                     <div>
                                         <div>{item.title}</div>
-                                        <button onClick={()=>this.props.removeFromCart(item)}>Remove</button>
+                                        <div className="right">
+                                            {formatCurrency(item.price)}&times;{item.count}{" "}
+                                            <button className="button" onClick={()=>this.props.removeFromCart(item)}>Remove</button>
+
+                                        </div>
                                     </div>
                                 </li>
                             ))}
